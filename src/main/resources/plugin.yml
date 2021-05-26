@@ -1,0 +1,21 @@
+name: SpigotKits
+main: net.thejrdev.kits.KitPlugin
+version: 1.0
+commands:
+  kit:
+    description: Gets a kit
+    aliases: k
+    permission: kit.get
+    permission-message: You cannot use kits
+  kitmodify:
+    description: Modifies kits
+    aliases: km
+    permission: kit.modify
+    permission-message: You cannot modify kits
+
+permissions:
+  kit.get:
+    description: Allows users to get kits
+  kit.modify:
+    description: Allows uses to create and modify kits
+    default: op
