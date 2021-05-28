@@ -47,6 +47,16 @@ public class Kit {
             }
             items.add(section.getItemStack(s));
         }
+
+        head.getItemMeta().setUnbreakable(true);
+        chest.getItemMeta().setUnbreakable(true);
+        legs.getItemMeta().setUnbreakable(true);
+        boots.getItemMeta().setUnbreakable(true);
+
+        for(ItemStack i: items){
+            i.getItemMeta().setUnbreakable(true);
+        }
+
         kits.put(name, this);
     }
 
@@ -67,6 +77,15 @@ public class Kit {
             if(item == null){continue;}
             items.add(item);
         }
+        head.getItemMeta().setUnbreakable(true);
+        chest.getItemMeta().setUnbreakable(true);
+        legs.getItemMeta().setUnbreakable(true);
+        boots.getItemMeta().setUnbreakable(true);
+
+        for(ItemStack i: items){
+            i.getItemMeta().setUnbreakable(true);
+        }
+
         save();
     }
 
