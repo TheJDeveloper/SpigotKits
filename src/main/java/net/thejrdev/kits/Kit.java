@@ -23,7 +23,7 @@ public class Kit {
     private JavaPlugin plugin;
     private String name;
 
-    private ItemStack head, chest, legs, boots;
+    private ItemStack head, chest, legs, boots, off;
     private List<ItemStack> items;
 
     public Kit(JavaPlugin plugin, String name) {
@@ -41,6 +41,7 @@ public class Kit {
         chest = section.getItemStack("chest");
         legs = section.getItemStack("legs");
         boots = section.getItemStack("boots");
+        off = section.getItemStack("off");
         for(String s: section.getKeys(false)){
             if(armor.contains(s)){
                 continue;
@@ -71,6 +72,7 @@ public class Kit {
         chest = inventory.getChestplate();
         legs = inventory.getLeggings();
         boots = inventory.getBoots();
+        off = inventory.getItemInOffHand();
 
         items = new ArrayList<>();
         for(ItemStack item: inventory.getStorageContents()){
@@ -120,6 +122,7 @@ public class Kit {
         inventory.setChestplate(chest);
         inventory.setLeggings(legs);
         inventory.setBoots(boots);
+        inventory.setItemInOffHand(off);
         for(ItemStack item: items){
             if(item == null){continue;}
             inventory.addItem(item);
